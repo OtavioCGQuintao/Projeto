@@ -1,0 +1,339 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff7f0;
+}
+
+/* TOPBAR */
+.topbar {
+  background: #e67e22;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* CATEGORIAS */
+.categorias {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 12px;
+  background: #ffe5d0;
+}
+
+.categorias button {
+  background: transparent;
+  border: 2px solid #e67e22;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.categorias button.ativo {
+  background: #e67e22;
+  color: white;
+  border: 2px solid #e66022;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  padding: 15px;
+}
+
+/* GRID MOBILE-FIRST */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+
+  border: 1px solid #e6e6e6; /* contorno cinza leve */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.preco {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #c0392b;
+  margin: 8px 0;
+}
+
+/* IMAGEM PRODUTO */
+.imagem {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* BOTÕES */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #e67e22;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* FLOAT CARRINHO (FAB NOVO) */
+/* ========================= */
+
+.floatCarrinho {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #e67e22;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+/* ÍCONE */
+.floatCarrinho img {
+  width: 26px;
+  height: 26px;
+}
+
+/* BADGE (QUANTIDADE) */
+.floatCarrinho span {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  background: #c0392b;
+  color: white;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+/* HOVER */
+.floatCarrinho:hover {
+  transform: scale(1.08);
+  transition: 0.15s;
+}
+
+/* CARRINHO */
+.carrinho {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+
+  background: #fff;
+  border-radius: 16px;
+
+  border: 1px solid #e2e2e2;
+
+  /* efeito de prancheta */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ITEM */
+.itemCarrinho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+
+  border: 1px solid #e6e6e6; /* cinza leve */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* IMAGEM CARRINHO */
+.itemCarrinho img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.itemCarrinho h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.itemCarrinho p {
+  margin: 4px 0 0 0;
+  color: #c0392b;
+}
+
+/* TOTAL */
+.carrinho h2 {
+  text-align: center;
+  color: #e67e22;
+  margin-top: 15px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.btnWhatsapp {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #25D366;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #1fb958;
+  cursor: pointer;
+}
+
+.btnWhatsapp:hover {
+  background: #1ebe5d;
+}
+.controleQtd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.controleQtd button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 0;
+}
+
+.controleQtd span {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ITEM CARRINHO AJUSTADO */
+.itemCarrinho {
+  position: relative;
+}
+
+/* BOTÃO REMOVER (X vermelho fora do item) */
+.removerItem {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #e74c3c;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  padding: 0;
+}
+
+.footerSocial {
+  margin-top: 25px;
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.footerSocial img {
+  width: 34px;
+  height: 34px;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+
+.footerSocial img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.hoverCard {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hoverCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.btnAdicionado {
+  background: #d8f5d8 !important;
+  color: #1b5e20 !important;
+  border: 2px solid #81c784 !important;
+  font-weight: bold;
+}
