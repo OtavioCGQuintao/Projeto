@@ -337,3 +337,11 @@ button {
   border: 2px solid #81c784 !important;
   font-weight: bold;
 }
+
+.contatoTexto {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e67e22;
+  margin-bottom: 10px;
+  text-align: center;
+}
