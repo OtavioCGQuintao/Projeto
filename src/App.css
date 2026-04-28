@@ -12,11 +12,6 @@ body {
   align-items: center;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-}
 
 /* CATEGORIAS */
 .categorias {
@@ -147,6 +142,7 @@ button {
   border-radius: 16px;
   border: 1px solid #e2e2e2;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  margin-top: 30px;
 }
 
 /* ITEM */
@@ -161,6 +157,7 @@ button {
   border: 1px solid #e6e6e6;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   position: relative;
+  padding-right: 32px;
 }
 
 .itemCarrinho img {
@@ -370,4 +367,36 @@ button {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 18px;
+  color: #b22222;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 15px;
+  }
 }

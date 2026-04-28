@@ -4,6 +4,7 @@ import boloImg from "./assets/boloImg.jpg";
 import carrinhoIcon from "./assets/carrinhoIcon.png";
 import instagramIcon from "./assets/instagramIcon.png";
 import whatsappIcon from "./assets/whatsappIcon.png";
+import perfilIcon from "./assets/perfilIcon.jpg";
 
 export default function App() {
   const [pagina, setPagina] = useState("home");
@@ -116,7 +117,7 @@ export default function App() {
       0
     );
 
-    return entrega ? subtotal + 2 : subtotal;
+    return entrega ? subtotal + 0 : subtotal;
   }, [carrinho, entrega]);
 
   function fecharTutorial() {
@@ -139,7 +140,7 @@ export default function App() {
       )
       .join("\n");
 
-    const taxa = entrega ? "\nTaxa de entrega: R$ 2,00" : "";
+    const taxa = entrega ? "\nTaxa de entrega: R$ A combinar" : "";
 
     const enderecoTexto = entrega
       ? `\n\nEndereço:\n${endereco.rua}, ${endereco.numero}${endereco.complemento ? " - " + endereco.complemento : ""
@@ -203,7 +204,10 @@ export default function App() {
         )}
 
         <header className="topbar">
-          <div className="logo">🍰 Gostosuras da Helena</div>
+          <div className="logo">
+            <img className="logo-img" src={perfilIcon} alt="Perfil" />
+            <span className="logo-text">Gostosuras da Helena</span>
+          </div>
         </header>
 
         <nav className="categorias">
@@ -369,7 +373,7 @@ export default function App() {
               checked={entrega}
               onChange={(e) => setEntrega(e.target.checked)}
             />
-            {" "}Quero entrega (+ R$ 2,00)
+            {" "}Quero entrega (+ R$ Valor a combinar)
           </label>
 
           {entrega && (
