@@ -11,7 +11,19 @@ export default function App() {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todas");
   const [shake, setShake] = useState(false);
 
+  const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
+  const [linkWhats, setLinkWhats] = useState("");
+  const [textoPedido, setTextoPedido] = useState("");
+
   const [showTutorial, setShowTutorial] = useState(false);
+
+  const [entrega, setEntrega] = useState(false);
+  const [endereco, setEndereco] = useState({
+    bairro: "",
+    rua: "",
+    numero: "",
+    complemento: ""
+  });
 
   React.useEffect(() => {
     setShowTutorial(true);
@@ -99,88 +111,49 @@ export default function App() {
   }
 
   const total = useMemo(() => {
-    return carrinho.reduce(
+    const subtotal = carrinho.reduce(
       (acc, item) => acc + item.produto.preco * item.quantidade,
       0
     );
-  }, [carrinho]);
+
+    return entrega ? subtotal + 2 : subtotal;
+  }, [carrinho, entrega]);
 
   function fecharTutorial() {
     setShowTutorial(false);
   }
 
   function finalizarPedido() {
-    const modal = document.createElement("div");
+    if (entrega) {
+      if (!endereco.bairro || !endereco.rua || !endereco.numero) {
+        alert("Preencha bairro, rua e número para entrega.");
+        return;
+      }
+    }
 
-    modal.style.position = "fixed";
-    modal.style.inset = "0";
-    modal.style.background = "rgba(0,0,0,0.75)";
-    modal.style.display = "flex";
-    modal.style.alignItems = "center";
-    modal.style.justifyContent = "center";
-    modal.style.zIndex = "9999";
+    const numero = "5531996210180";
 
-    modal.innerHTML = `
-    <div style="
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 320px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      font-family: Arial;
-    ">
-      <h3 style="margin: 0 0 10px 0;">Confirme sua compra</h3>
-      <p style="margin: 0 0 15px 0;">
-        Confira itens, quantidades e total antes de continuar.
-      </p>
+    const mensagem = carrinho
+      .map(item =>
+        `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco})`
+      )
+      .join("\n");
 
-      <button id="confirmarBtn" style="
-        background: #25D366;
-        color: white;
-        border: none;
-        padding: 10px;
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 8px;
-        cursor: pointer;
-      ">Confirmar</button>
+    const taxa = entrega ? "\nTaxa de entrega: R$ 2,00" : "";
 
-      <button id="cancelarBtn" style="
-        background: #d43a3a;
-        color: black;
-        border: none;
-        padding: 10px;
-        width: 100%;
-        border-radius: 8px;
-        cursor: pointer;
-      ">Cancelar</button>
-    </div>
-  `;
+    const enderecoTexto = entrega
+      ? `\n\nEndereço:\n${endereco.rua}, ${endereco.numero}${endereco.complemento ? " - " + endereco.complemento : ""
+      }\n${endereco.bairro}`
+      : "";
 
-    document.body.appendChild(modal);
+    const textoFinal =
+      `Olá! Vou querer:\n\n${mensagem}${taxa}${enderecoTexto}\n\nTotal: R$ ${total}`;
 
-    document.getElementById("cancelarBtn").onclick = () => {
-      document.body.removeChild(modal);
-    };
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFinal)}`;
 
-    document.getElementById("confirmarBtn").onclick = () => {
-      document.body.removeChild(modal);
-
-      const numero = "5531996210180";
-
-      const mensagem = carrinho
-        .map(item =>
-          `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco})`
-        )
-        .join("\n");
-
-      const textoFinal = `Olá! Vou querer:\n\n${mensagem}\n\nTotal: R$ ${total}`;
-
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFinal)}`;
-
-      window.open(url, "_blank");
-    };
+    setTextoPedido(textoFinal);
+    setLinkWhats(url);
+    setMostrarConfirmacao(true);
   }
 
   if (pagina === "home") {
@@ -198,7 +171,6 @@ export default function App() {
               backdropFilter: "blur(2px)"
             }}
           >
-            {/* TEXTO (responsivo e centralizado no carrinho) */}
             <div
               style={{
                 position: "fixed",
@@ -214,7 +186,6 @@ export default function App() {
               O seu carrinho está aqui
             </div>
 
-            {/* DESTAQUE DO BOTÃO */}
             <div
               style={{
                 position: "fixed",
@@ -282,53 +253,175 @@ export default function App() {
   }
 
   return (
-    <div className="container carrinho">
-      <h1>Carrinho</h1>
+    <>
+      {mostrarConfirmacao && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999
+          }}
+        >
+          <div
+            style={{
+              background: "#fff",
+              padding: "20px",
+              borderRadius: "15px",
+              width: "90%",
+              maxWidth: "400px",
+              textAlign: "center",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+            }}
+          >
+            <h3 style={{ marginBottom: "10px", color: "#e67e22" }}>
+              Confirmar pedido
+            </h3>
 
-      {carrinho.length === 0 && <p>Seu carrinho está vazio</p>}
+            <p style={{ fontSize: "14px", color: "#333" }}>
+              Deseja enviar seu pedido para o WhatsApp?
+            </p>
 
-      {carrinho.map((item, i) => (
-        <div className="itemCarrinho" key={i}>
-          <button className="removerItem" onClick={() => remover(item.produto)}>
-            ×
-          </button>
+            <div
+              style={{
+                maxHeight: "150px",
+                overflowY: "auto",
+                textAlign: "left",
+                fontSize: "12px",
+                background: "#f7f7f7",
+                padding: "10px",
+                borderRadius: "10px",
+                marginTop: "10px"
+              }}
+            >
+              {textoPedido}
+            </div>
 
-          <img src={item.produto.imagem} alt={item.produto.nome} />
+            <div style={{ display: "flex", gap: "10px", marginTop: "15px" }}>
+              <button
+                style={{
+                  background: "#e67e22",
+                  color: "#fff",
+                  flex: 1,
+                  border: "none",
+                  padding: "10px",
+                  borderRadius: "8px"
+                }}
+                onClick={() => {
+                  window.open(linkWhats, "_blank");
+                  setMostrarConfirmacao(false);
+                }}
+              >
+                Confirmar
+              </button>
 
-          <div className="infoCarrinho">
-            <h3>{item.produto.nome}</h3>
-            <p>R$ {item.produto.preco}</p>
-
-            <div className="controleQtd">
-              <button onClick={() => diminuir(item.produto)}>-</button>
-              <span>{item.quantidade}</span>
-              <button onClick={() => aumentar(item.produto)}>+</button>
+              <button
+                style={{
+                  background: "#ccc",
+                  color: "#000",
+                  flex: 1,
+                  border: "none",
+                  padding: "10px",
+                  borderRadius: "8px"
+                }}
+                onClick={() => setMostrarConfirmacao(false)}
+              >
+                Cancelar
+              </button>
             </div>
           </div>
         </div>
-      ))}
+      )}
 
-      <h2>Total: R$ {total}</h2>
+      <div className="container carrinho">
+        <h1>Carrinho</h1>
 
-      <button className="btnWhatsapp" onClick={finalizarPedido}>
-        Finalizar pedido no WhatsApp
-      </button>
+        {carrinho.length === 0 && <p>Seu carrinho está vazio</p>}
 
-      <button onClick={() => setPagina("home")}>
-        Voltar
-      </button>
+        {carrinho.map((item, i) => (
+          <div className="itemCarrinho" key={i}>
+            <button className="removerItem" onClick={() => remover(item.produto)}>
+              ×
+            </button>
 
-      <footer className="footerSocial">
-        <p className="contatoTexto">Contate-me</p>
+            <img src={item.produto.imagem} alt={item.produto.nome} />
 
-        <a href="https://www.instagram.com/gostosura_da_helena/" target="_blank" rel="noreferrer">
-          <img src={instagramIcon} alt="Instagram" />
-        </a>
+            <div className="infoCarrinho">
+              <h3>{item.produto.nome}</h3>
+              <p>R$ {item.produto.preco}</p>
 
-        <a href="https://wa.me/5531996210180" target="_blank" rel="noreferrer">
-          <img src={whatsappIcon} alt="WhatsApp" />
-        </a>
-      </footer>
-    </div>
+              <div className="controleQtd">
+                <button onClick={() => diminuir(item.produto)}>-</button>
+                <span>{item.quantidade}</span>
+                <button onClick={() => aumentar(item.produto)}>+</button>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <div style={{ marginTop: "15px" }}>
+          <label>
+            <input
+              type="checkbox"
+              checked={entrega}
+              onChange={(e) => setEntrega(e.target.checked)}
+            />
+            {" "}Quero entrega (+ R$ 2,00)
+          </label>
+
+          {entrega && (
+            <div style={{ marginTop: "10px" }}>
+              <input placeholder="Bairro"
+                value={endereco.bairro}
+                onChange={(e) => setEndereco({ ...endereco, bairro: e.target.value })} style={{
+                  border: entrega && !endereco.bairro ? "1px solid red" : undefined
+                }}
+              />
+              <input placeholder="Rua"
+                value={endereco.rua}
+                onChange={(e) => setEndereco({ ...endereco, rua: e.target.value })} style={{
+                  border: entrega && !endereco.rua ? "1px solid red" : undefined
+                }}
+              />
+              <input placeholder="Número"
+                value={endereco.numero}
+                onChange={(e) => setEndereco({ ...endereco, numero: e.target.value })} style={{
+                  border: entrega && !endereco.numero ? "1px solid red" : undefined
+                }}
+              />
+              <input placeholder="Complemento (opcional)"
+                value={endereco.complemento}
+                onChange={(e) => setEndereco({ ...endereco, complemento: e.target.value })}
+              />
+            </div>
+          )}
+        </div>
+
+        <h2>Total: R$ {total}</h2>
+
+        <button className="btnWhatsapp" onClick={finalizarPedido}>
+          Finalizar pedido no WhatsApp
+        </button>
+
+        <button onClick={() => setPagina("home")}>
+          Voltar
+        </button>
+
+        <footer className="footerSocial">
+          <p className="contatoTexto">Contate-me</p>
+
+          <a href="https://www.instagram.com/gostosura_da_helena/" target="_blank" rel="noreferrer">
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+
+          <a href="https://wa.me/5531996210180" target="_blank" rel="noreferrer">
+            <img src={whatsappIcon} alt="WhatsApp" />
+          </a>
+        </footer>
+      </div>
+    </>
   );
 }

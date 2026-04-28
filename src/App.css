@@ -59,8 +59,7 @@ body {
   border-radius: 15px;
   padding: 12px;
   text-align: center;
-
-  border: 1px solid #e6e6e6; /* contorno cinza leve */
+  border: 1px solid #e6e6e6;
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
@@ -76,7 +75,7 @@ body {
   margin: 8px 0;
 }
 
-/* IMAGEM PRODUTO */
+/* IMAGEM */
 .imagem {
   width: 100%;
   height: 140px;
@@ -95,62 +94,45 @@ button {
   cursor: pointer;
 }
 
-/* ========================= */
-/* FLOAT CARRINHO (FAB NOVO) */
-/* ========================= */
-
+/* FLOAT CARRINHO */
 .floatCarrinho {
   position: fixed;
   bottom: 18px;
   right: 18px;
-
   width: 58px;
   height: 58px;
-
   border-radius: 50%;
   border: none;
-
   background: #e67e22;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   padding: 0;
 }
 
-/* ÍCONE */
 .floatCarrinho img {
   width: 26px;
   height: 26px;
 }
 
-/* BADGE (QUANTIDADE) */
 .floatCarrinho span {
   position: absolute;
   top: 6px;
   right: 6px;
-
   background: #c0392b;
   color: white;
-
   font-size: 12px;
   font-weight: bold;
-
   width: 18px;
   height: 18px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
 }
 
-/* HOVER */
 .floatCarrinho:hover {
   transform: scale(1.08);
   transition: 0.15s;
@@ -161,13 +143,9 @@ button {
   max-width: 700px;
   margin: 0 auto;
   padding: 15px;
-
   background: #fff;
   border-radius: 16px;
-
   border: 1px solid #e2e2e2;
-
-  /* efeito de prancheta */
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
@@ -176,18 +154,15 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-
   background: white;
   padding: 10px;
   margin-bottom: 10px;
-
   border-radius: 12px;
-
-  border: 1px solid #e6e6e6; /* cinza leve */
+  border: 1px solid #e6e6e6;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* IMAGEM CARRINHO */
 .itemCarrinho img {
   width: 65px;
   height: 65px;
@@ -219,6 +194,7 @@ button {
   }
 }
 
+/* WHATSAPP */
 .btnWhatsapp {
   width: 100%;
   padding: 14px;
@@ -235,6 +211,8 @@ button {
 .btnWhatsapp:hover {
   background: #1ebe5d;
 }
+
+/* CONTROLE QTD */
 .controleQtd {
   display: flex;
   align-items: center;
@@ -256,42 +234,27 @@ button {
   text-align: center;
 }
 
-/* ITEM CARRINHO AJUSTADO */
-.itemCarrinho {
-  position: relative;
-}
-
-/* BOTÃO REMOVER (X vermelho fora do item) */
+/* REMOVER */
 .removerItem {
   position: absolute;
   top: 6px;
   right: 6px;
-
   width: 26px;
   height: 26px;
-
   border-radius: 50%;
   border: none;
-
   background: #e74c3c;
   color: white;
-
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-size: 16px;
   font-weight: bold;
-
   padding: 0;
 }
 
+/* FOOTER */
 .footerSocial {
   margin-top: 25px;
   padding: 20px 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -310,6 +273,7 @@ button {
   transform: scale(1.1);
 }
 
+/* HOVER CARD */
 .hoverCard {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -319,6 +283,7 @@ button {
   box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
+/* SHAKE */
 .shake {
   animation: shake 0.3s;
 }
@@ -331,6 +296,7 @@ button {
   100% { transform: translateX(0); }
 }
 
+/* BTN ADICIONADO */
 .btnAdicionado {
   background: #d8f5d8 !important;
   color: #1b5e20 !important;
@@ -338,6 +304,7 @@ button {
   font-weight: bold;
 }
 
+/* TEXTO CONTATO */
 .contatoTexto {
   font-size: 16px;
   font-weight: bold;
@@ -346,10 +313,61 @@ button {
   text-align: center;
 }
 
-.contatoTexto {
-  font-size: 16px;
+/* ===== FORM ENTREGA (AJUSTADO AO DESIGN DO SITE) ===== */
+
+.carrinho input {
+  width: 100%;
+  padding: 9px 10px;
+
+  margin-top: 6px;
+
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+
+  background: #fff;
+  color: #333;
+
+  font-size: 14px;
+
+  outline: none;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+/* foco alinhado ao tema laranja */
+.carrinho input:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}
+
+/* checkbox mais alinhado ao layout */
+.carrinho label {
+  font-size: 14px;
   font-weight: bold;
-  color: #e67e22;
-  margin-bottom: 10px;
-  text-align: center;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 5px;
+  color: #333;
+}
+
+.carrinho input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.05);
+  margin: 0;
+}
+
+/* bloco de endereço mais compacto */
+.carrinho .endereco-bloco {
+  margin-top: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
