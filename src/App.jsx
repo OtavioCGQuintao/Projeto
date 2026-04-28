@@ -109,18 +109,18 @@ export default function App() {
     setShowTutorial(false);
   }
 
-function finalizarPedido() {
-  const modal = document.createElement("div");
+  function finalizarPedido() {
+    const modal = document.createElement("div");
 
-  modal.style.position = "fixed";
-  modal.style.inset = "0";
-  modal.style.background = "rgba(0,0,0,0.75)";
-  modal.style.display = "flex";
-  modal.style.alignItems = "center";
-  modal.style.justifyContent = "center";
-  modal.style.zIndex = "9999";
+    modal.style.position = "fixed";
+    modal.style.inset = "0";
+    modal.style.background = "rgba(0,0,0,0.75)";
+    modal.style.display = "flex";
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    modal.style.zIndex = "9999";
 
-  modal.innerHTML = `
+    modal.innerHTML = `
     <div style="
       background: white;
       padding: 20px;
@@ -158,30 +158,30 @@ function finalizarPedido() {
     </div>
   `;
 
-  document.body.appendChild(modal);
+    document.body.appendChild(modal);
 
-  document.getElementById("cancelarBtn").onclick = () => {
-    document.body.removeChild(modal);
-  };
+    document.getElementById("cancelarBtn").onclick = () => {
+      document.body.removeChild(modal);
+    };
 
-  document.getElementById("confirmarBtn").onclick = () => {
-    document.body.removeChild(modal);
+    document.getElementById("confirmarBtn").onclick = () => {
+      document.body.removeChild(modal);
 
-    const numero = "5531996210180";
+      const numero = "5531996210180";
 
-    const mensagem = carrinho
-      .map(item =>
-        `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco})`
-      )
-      .join("\n");
+      const mensagem = carrinho
+        .map(item =>
+          `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco})`
+        )
+        .join("\n");
 
-    const textoFinal = `Olá! Vou querer:\n\n${mensagem}\n\nTotal: R$ ${total}`;
+      const textoFinal = `Olá! Vou querer:\n\n${mensagem}\n\nTotal: R$ ${total}`;
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFinal)}`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFinal)}`;
 
-    window.open(url, "_blank");
-  };
-}
+      window.open(url, "_blank");
+    };
+  }
 
   if (pagina === "home") {
     return (
@@ -319,6 +319,8 @@ function finalizarPedido() {
       </button>
 
       <footer className="footerSocial">
+        <p className="contatoTexto">Contate-me</p>
+
         <a href="https://www.instagram.com/gostosura_da_helena/" target="_blank" rel="noreferrer">
           <img src={instagramIcon} alt="Instagram" />
         </a>
