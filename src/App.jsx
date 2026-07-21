@@ -31,23 +31,34 @@ export default function App() {
   }, []);
 
   const produtos = [
-    { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 28, imagem: boloImg },
-    { nome: "Bolo de Cenoura", categoria: "Bolos", preco: 30, imagem: boloImg },
-    { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 35, imagem: boloImg },
-    { nome: "Bolo de Ninho", categoria: "Bolos", preco: 40, imagem: boloImg },
-    { nome: "Broinha de Fubá com Canjica", categoria: "Quitandas", preco: 20, imagem: boloImg },
-    { nome: "Caçarola", categoria: "Quitandas", preco: 25, imagem: boloImg },
-    { nome: "Cookie", categoria: "Doces", preco: 8, imagem: boloImg },
+    { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 20, imagem: boloImg },
+    { nome: "Bolo de Cenoura", categoria: "Bolos", preco: 20, imagem: boloImg },
+    { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 19, imagem: boloImg },
+    { nome: "Bolo de Ninho", categoria: "Bolos", preco: 17, imagem: boloImg },
+    { nome: "Broinha de Fubá com Canjica", categoria: "Quitandas", preco: 15, imagem: boloImg },
+    { nome: "Caçarola", categoria: "Quitandas", preco: 15, imagem: boloImg },
+    { nome: "Cookie Tradicional", categoria: "Doces", preco: 12, imagem: boloImg },
+    { nome: "Cookie com cobertura de chocolate", categoria: "Doces", preco: 15, imagem: boloImg },
     { nome: "Pão 100% Integral", categoria: "Pães", preco: 14, imagem: boloImg },
-    { nome: "Pão de Canela", categoria: "Pães", preco: 12, imagem: boloImg },
-    { nome: "Pudim de Pão", categoria: "Doces", preco: 20, imagem: boloImg },
-    { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 16, imagem: boloImg },
-    { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 15, imagem: boloImg },
-    { nome: "Rosquinha Integral", categoria: "Rosquinhas", preco: 18, imagem: boloImg },
-    { nome: "Tareco de Queijo", categoria: "Quitandas", preco: 18, imagem: boloImg },
-    { nome: "Torta de Frango (Grande)", categoria: "Tortas", preco: 55, imagem: boloImg },
-    { nome: "Torta de Frango (Média)", categoria: "Tortas", preco: 40, imagem: boloImg },
-    { nome: "Torta de Frango (Pequena)", categoria: "Tortas", preco: 30, imagem: boloImg }
+    { nome: "Pão com Canela", categoria: "Pães", preco: 13, imagem: boloImg },
+    { nome: "Pão com Goiabada", categoria: "Pães", preco: 13, imagem: boloImg },
+    { nome: "Pão com Queijo", categoria: "Pães", preco: 13, imagem: boloImg },
+    { nome: "Pão Queca", categoria: "Pães", preco: 13, imagem: boloImg },
+    { nome: "Pão de Forma", categoria: "Pães", preco: 9, imagem: boloImg },
+    { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 13.50, imagem: boloImg },
+    { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 13.50, imagem: boloImg },
+    { nome: "Rosquinha Integral", categoria: "Rosquinhas", preco: 14.50, imagem: boloImg },
+    { nome: "Tareco de Queijo", categoria: "Quitandas", preco: 14, imagem: boloImg },
+    { nome: "Torta de Frango (G)", categoria: "Tortas", preco: 53, imagem: boloImg },
+    { nome: "Torta de Frango (M)", categoria: "Tortas", preco: 23, imagem: boloImg },
+    { nome: "Torta de Frango (P)", categoria: "Tortas", preco: 10, imagem: boloImg },
+    { nome: "Torta de Frango (PP)", categoria: "Tortas", preco: 10, imagem: boloImg },
+    { nome: "Pizza Lanche", categoria: "Pizzas", preco: 10, imagem: boloImg },
+    { nome: "Cocada Tradicional (100)", categoria: "Sobremesa", preco: 100, imagem: boloImg },
+    { nome: "Cocada de Maracujá (100)", categoria: "Sobremesa", preco: 100, imagem: boloImg },
+    { nome: "Pé de Moleque", categoria: "Sobremesa", preco: 100, imagem: boloImg },
+    { nome: "Beliscão de Goiabada", categoria: "Sobremesa", preco: 15, imagem: boloImg },
+    { nome: "Palha Italiana (Cento)", categoria: "Sobremesa", preco: 95, imagem: boloImg }
   ];
 
   const categorias = useMemo(() => {
@@ -82,7 +93,7 @@ export default function App() {
       return [...prev, { produto, quantidade: 1 }];
     });
   }
-
+ 
   function aumentar(produto) {
     setCarrinho(prev =>
       prev.map(item =>
