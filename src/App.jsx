@@ -1,6 +1,32 @@
 import React, { useState, useMemo } from "react";
 import "./App.css";
-import boloImg from "./assets/boloImg.jpg";
+
+import BoloDeBananaIntegral from "./assets/BoloDeBananaIntegral.jpeg";
+import BoloDeCenoura from "./assets/BoloDeCenouraComGotas.jpeg";
+import BoloDeChocolate from "./assets/BoloDeChocolate.jpeg";
+import BoloDeNinho from "./assets/BoloDeNinho.jpeg";
+import BroinhaDeCanjica from "./assets/BroinhaDeCanjica.jpeg";
+import Caçarola from "./assets/Caçarola.jpeg";
+import CookieTradicional from "./assets/CookieTradicional.jpeg";
+import CookieBanhado from "./assets/CookieBanhado.jpeg";
+import PãoIntegral from "./assets/PãoIntegral.jpeg";
+import PãoDeCanela from "./assets/PãoDeCanela.jpeg";
+import Queca from "./assets/Queca.jpeg";
+import PãoDeForma from "./assets/PãoDeForma.jpeg";
+import RosquinhaDeBiju from "./assets/RosquinhaDeBiju.jpeg";
+import RosquinhaDeNata from "./assets/RosquinhaDeNata.jpeg";
+import RosquinhaIntegral from "./assets/RosquinhaIntegral.jpeg";
+import TarecoDeQueijo from "./assets/TarecoDeQueijo.jpeg";
+import TortaDeFrango from "./assets/TortaDeFrango.jpeg";
+import TortaDeFrangoP from "./assets/TortaDeFrangoP.jpeg";
+import TortaDeFrangoPP from "./assets/TortaDeFrangoPP.jpeg";
+import MiniPizza from "./assets/MiniPizza.jpeg";
+import Cocada from "./assets/Cocada.jpeg";
+import PéDeMoleque from "./assets/PéDeMoleque.jpeg";
+import Beliscão from "./assets/Beliscão.jpeg";
+import PalhaItaliana from "./assets/PalhaItaliana.jpeg";
+import Empada from "./assets/Empada.jpeg";
+import Hambúrguer from "./assets/Hambúrguer.jpeg";
 import carrinhoIcon from "./assets/carrinhoIcon.png";
 import instagramIcon from "./assets/instagramIcon.png";
 import whatsappIcon from "./assets/whatsappIcon.png";
@@ -31,34 +57,36 @@ export default function App() {
   }, []);
 
   const produtos = [
-    { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 20, imagem: boloImg },
-    { nome: "Bolo de Cenoura", categoria: "Bolos", preco: 20, imagem: boloImg },
-    { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 19, imagem: boloImg },
-    { nome: "Bolo de Ninho", categoria: "Bolos", preco: 17, imagem: boloImg },
-    { nome: "Broinha de Fubá com Canjica", categoria: "Quitandas", preco: 15, imagem: boloImg },
-    { nome: "Caçarola", categoria: "Quitandas", preco: 15, imagem: boloImg },
-    { nome: "Cookie Tradicional", categoria: "Doces", preco: 12, imagem: boloImg },
-    { nome: "Cookie com cobertura de chocolate", categoria: "Doces", preco: 15, imagem: boloImg },
-    { nome: "Pão 100% Integral", categoria: "Pães", preco: 14, imagem: boloImg },
-    { nome: "Pão com Canela", categoria: "Pães", preco: 13, imagem: boloImg },
-    { nome: "Pão com Goiabada", categoria: "Pães", preco: 13, imagem: boloImg },
-    { nome: "Pão com Queijo", categoria: "Pães", preco: 13, imagem: boloImg },
-    { nome: "Pão Queca", categoria: "Pães", preco: 13, imagem: boloImg },
-    { nome: "Pão de Forma", categoria: "Pães", preco: 9, imagem: boloImg },
-    { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 13.50, imagem: boloImg },
-    { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 13.50, imagem: boloImg },
-    { nome: "Rosquinha Integral", categoria: "Rosquinhas", preco: 14.50, imagem: boloImg },
-    { nome: "Tareco de Queijo", categoria: "Quitandas", preco: 14, imagem: boloImg },
-    { nome: "Torta de Frango (G)", categoria: "Tortas", preco: 53, imagem: boloImg },
-    { nome: "Torta de Frango (M)", categoria: "Tortas", preco: 23, imagem: boloImg },
-    { nome: "Torta de Frango (P)", categoria: "Tortas", preco: 10, imagem: boloImg },
-    { nome: "Torta de Frango (PP)", categoria: "Tortas", preco: 10, imagem: boloImg },
-    { nome: "Pizza Lanche", categoria: "Pizzas", preco: 10, imagem: boloImg },
-    { nome: "Cocada Tradicional (100)", categoria: "Sobremesa", preco: 100, imagem: boloImg },
-    { nome: "Cocada de Maracujá (100)", categoria: "Sobremesa", preco: 100, imagem: boloImg },
-    { nome: "Pé de Moleque", categoria: "Sobremesa", preco: 100, imagem: boloImg },
-    { nome: "Beliscão de Goiabada", categoria: "Sobremesa", preco: 15, imagem: boloImg },
-    { nome: "Palha Italiana (Cento)", categoria: "Sobremesa", preco: 95, imagem: boloImg }
+    { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 20, imagem: BoloDeBananaIntegral },
+    { nome: "Bolo de Cenoura", categoria: "Bolos", preco: 20, imagem: BoloDeCenoura },
+    { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 19, imagem: BoloDeChocolate },
+    { nome: "Bolo de Ninho", categoria: "Bolos", preco: 17, imagem: BoloDeNinho },
+    { nome: "Broinha de Fubá com Canjica", categoria: "Quitandas", preco: 15, imagem: BroinhaDeCanjica },
+    { nome: "Caçarola", categoria: "Quitandas", preco: 15, imagem: Caçarola },
+    { nome: "Cookie Tradicional", categoria: "Doces", preco: 12, imagem: CookieTradicional },
+    { nome: "Cookie com cobertura de chocolate", categoria: "Doces", preco: 15, imagem: CookieBanhado },
+    { nome: "Pão 100% Integral", categoria: "Pães", preco: 14, imagem: PãoIntegral },
+    { nome: "Pão com Canela", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
+    { nome: "Pão com Goiabada", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
+    { nome: "Pão com Queijo", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
+  { nome: "Pão Queca", categoria: "Pães", preco: 13, imagem: Queca },
+    { nome: "Pão de Forma", categoria: "Pães", preco: 9, imagem: PãoDeForma },
+    { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeBiju },
+    { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeNata },
+    { nome: "Rosquinha Integral", categoria: "Rosquinhas", preco: 14.50, imagem: RosquinhaIntegral },
+    { nome: "Tareco de Queijo", categoria: "Quitandas", preco: 14, imagem: TarecoDeQueijo },
+    { nome: "Torta de Frango (G)", categoria: "Tortas", preco: 53, imagem: TortaDeFrango },
+    { nome: "Torta de Frango (M)", categoria: "Tortas", preco: 23, imagem: TortaDeFrango },
+    { nome: "Torta de Frango (P)", categoria: "Tortas", preco: 10, imagem: TortaDeFrangoP },
+    { nome: "Torta de Frango (PP)", categoria: "Tortas", preco: 5, imagem: TortaDeFrangoPP },
+    { nome: "Pizza Lanche", categoria: "Pizzas", preco: 10, imagem: MiniPizza },
+    { nome: "Cocada Tradicional (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
+    { nome: "Cocada de Maracujá (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
+    { nome: "Pé de Moleque", categoria: "Sobremesa", preco: 80, imagem: PéDeMoleque },
+    { nome: "Beliscão de Goiabada", categoria: "Sobremesa", preco: 15, imagem: Beliscão },
+    { nome: "Palha Italiana (Cento)", categoria: "Sobremesa", preco: 95, imagem: PalhaItaliana },
+    { nome: "Empada de Queijo", categoria: "Quitandas", preco: 19, imagem: Empada },
+    { nome: "Hambúrguer Assado", categoria: "Quitandas", preco: 19, imagem: Hambúrguer }
   ];
 
   const categorias = useMemo(() => {
@@ -122,14 +150,14 @@ export default function App() {
     );
   }
 
-  const total = useMemo(() => {
-    const subtotal = carrinho.reduce(
-      (acc, item) => acc + item.produto.preco * item.quantidade,
-      0
-    );
+const total = useMemo(() => {
+  const subtotal = carrinho.reduce(
+    (acc, item) => acc + item.produto.preco * item.quantidade,
+    0
+  );
 
-    return entrega ? subtotal + 0 : subtotal;
-  }, [carrinho, entrega]);
+  return entrega ? subtotal : subtotal;
+}, [carrinho, entrega]);
 
   function fecharTutorial() {
     setShowTutorial(false);
@@ -147,7 +175,7 @@ export default function App() {
 
     const mensagem = carrinho
       .map(item =>
-        `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco})`
+        `- ${item.produto.nome} x${item.quantidade} (R$ ${item.produto.preco.toFixed(2)})`
       )
       .join("\n");
 
@@ -159,7 +187,7 @@ export default function App() {
       : "";
 
     const textoFinal =
-      `Olá! Vou querer:\n\n${mensagem}${taxa}${enderecoTexto}\n\nTotal: R$ ${total}`;
+  `Olá! Vou querer:\n\n${mensagem}${taxa}${enderecoTexto}\n\nTotal: R$ ${total.toFixed(2)}`;
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFinal)}`;
 
@@ -239,7 +267,7 @@ export default function App() {
               <div className="card hoverCard" key={i}>
                 <img src={p.imagem} alt={p.nome} className="imagem" />
                 <h3>{p.nome}</h3>
-                <span className="preco">R$ {p.preco}</span>
+                <span className="preco">R$ {p.preco.toFixed(2)}</span>
 
                 <button
                   className={produtoConfirmado === p.nome ? "btnAdicionado" : ""}
@@ -366,7 +394,7 @@ export default function App() {
 
             <div className="infoCarrinho">
               <h3>{item.produto.nome}</h3>
-              <p>R$ {item.produto.preco}</p>
+              <p>R$ {item.produto.preco.toFixed(2)}</p>
 
               <div className="controleQtd">
                 <button onClick={() => diminuir(item.produto)}>-</button>
@@ -415,7 +443,7 @@ export default function App() {
           )}
         </div>
 
-        <h2>Total: R$ {total}</h2>
+        <h2>Total: R$ {total.toFixed(2)}</h2>
 
         <button className="btnWhatsapp" onClick={finalizarPedido}>
           Finalizar pedido no WhatsApp
