@@ -3,6 +3,7 @@ import "./App.css";
 
 import BoloDeBananaIntegral from "./assets/BoloDeBananaIntegral.jpeg";
 import BoloDeCenoura from "./assets/BoloDeCenouraComGotas.jpeg";
+import BoloDeCenouraComCobertura from "./assets/BoloDeCenouraComCobertura.jpeg";
 import BoloDeChocolate from "./assets/BoloDeChocolate.jpeg";
 import BoloDeNinho from "./assets/BoloDeNinho.jpeg";
 import BroinhaDeCanjica from "./assets/BroinhaDeCanjica.jpeg";
@@ -60,6 +61,7 @@ export default function App() {
 
   const produtos = [
     { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 20, imagem: BoloDeBananaIntegral },
+    { nome: "Bolo de Cenoura com cobertura de chocolate", categoria: "Bolos", preco: 19, imagem: BoloDeCenouraComCobertura },
     { nome: "Bolo de Cenoura sem cobertura com gotas de chocolate", categoria: "Bolos", preco: 18, imagem: BoloDeCenoura },
     { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 19, imagem: BoloDeChocolate },
     { nome: "Bolo de Ninho", categoria: "Bolos", preco: 17, imagem: BoloDeNinho },
@@ -85,7 +87,7 @@ export default function App() {
     { nome: "Pizza Lanche de Calabresa", categoria: "Pizzas", preco: 10, imagem: MiniPizzaCalabresa },
     { nome: "Cocada Tradicional (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
     { nome: "Cocada de Maracujá (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
-    { nome: "Pé de Moleque", categoria: "Sobremesa", preco: 80, imagem: PéDeMoleque },
+    { nome: "Pé de Moleque (Cento)", categoria: "Sobremesa", preco: 80, imagem: PéDeMoleque },
     { nome: "Beliscão de Goiabada", categoria: "Sobremesa", preco: 15, imagem: Beliscão },
     { nome: "Palha Italiana (Cento)", categoria: "Sobremesa", preco: 95, imagem: PalhaItaliana },
     { nome: "Empada de Queijo", categoria: "Quitandas", preco: 19, imagem: Empada },
