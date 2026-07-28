@@ -21,7 +21,8 @@ import TarecoDeQueijo from "./assets/TarecoDeQueijo.jpeg";
 import TortaDeFrango from "./assets/TortaDeFrango.jpeg";
 import TortaDeFrangoP from "./assets/TortaDeFrangoP.jpeg";
 import TortaDeFrangoPP from "./assets/TortaDeFrangoPP.jpeg";
-import MiniPizza from "./assets/MiniPizza.jpeg";
+import MiniPizzaFrango from "./assets/MiniPizzaFrango.jpeg";
+import MiniPizzaCalabresa from "./assets/MiniPizzaCalabresa.jpeg";
 import Cocada from "./assets/Cocada.jpeg";
 import PéDeMoleque from "./assets/PéDeMoleque.jpeg";
 import Beliscão from "./assets/Beliscão.jpeg";
@@ -70,17 +71,18 @@ export default function App() {
     { nome: "Pão com Canela", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
     { nome: "Pão com Goiabada", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
     { nome: "Pão com Queijo", categoria: "Pães", preco: 14, imagem: PãoComQueijo },
-  { nome: "Pão Queca", categoria: "Pães", preco: 14, imagem: Queca },
+    { nome: "Pão Queca", categoria: "Pães", preco: 14, imagem: Queca },
     { nome: "Pão de Forma", categoria: "Pães", preco: 9, imagem: PãoDeForma },
     { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeBiju },
     { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeNata },
     { nome: "Rosquinha Integral", categoria: "Rosquinhas", preco: 14.50, imagem: RosquinhaIntegral },
     { nome: "Tareco de Queijo", categoria: "Quitandas", preco: 14, imagem: TarecoDeQueijo },
-    { nome: "Torta de Frango (G)", categoria: "Tortas", preco: 53, imagem: TortaDeFrango },
-    { nome: "Torta de Frango (M)", categoria: "Tortas", preco: 23, imagem: TortaDeFrango },
-    { nome: "Torta de Frango (P)", categoria: "Tortas", preco: 10, imagem: TortaDeFrangoP },
-    { nome: "Torta de Frango (PP)", categoria: "Tortas", preco: 5, imagem: TortaDeFrangoPP },
-    { nome: "Pizza Lanche", categoria: "Pizzas", preco: 10, imagem: MiniPizza },
+    { nome: "Torta de Frango (G) 24cm de diâmetro", categoria: "Tortas", preco: 53, imagem: TortaDeFrango },
+    { nome: "Torta de Frango (M) 18cm de diâmetro", categoria: "Tortas", preco: 23, imagem: TortaDeFrango },
+    { nome: "Torta de Frango (P) 12cm de diâmetro", categoria: "Tortas", preco: 10, imagem: TortaDeFrangoP },
+    { nome: "Torta de Frango (PP) 7,5cm de diâmetro", categoria: "Tortas", preco: 5, imagem: TortaDeFrangoPP },
+    { nome: "Pizza Lanche de Frango", categoria: "Pizzas", preco: 10, imagem: MiniPizzaFrango },
+    { nome: "Pizza Lanche de Calabresa", categoria: "Pizzas", preco: 10, imagem: MiniPizzaCalabresa },
     { nome: "Cocada Tradicional (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
     { nome: "Cocada de Maracujá (100)", categoria: "Sobremesa", preco: 100, imagem: Cocada },
     { nome: "Pé de Moleque", categoria: "Sobremesa", preco: 80, imagem: PéDeMoleque },
