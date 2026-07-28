@@ -11,6 +11,7 @@ import CookieTradicional from "./assets/CookieTradicional.jpeg";
 import CookieBanhado from "./assets/CookieBanhado.jpeg";
 import PãoIntegral from "./assets/PãoIntegral.jpeg";
 import PãoDeCanela from "./assets/PãoDeCanela.jpeg";
+import PãoComQueijo from "./assets/PãoComQueijo.jpeg";
 import Queca from "./assets/Queca.jpeg";
 import PãoDeForma from "./assets/PãoDeForma.jpeg";
 import RosquinhaDeBiju from "./assets/RosquinhaDeBiju.jpeg";
@@ -58,7 +59,7 @@ export default function App() {
 
   const produtos = [
     { nome: "Bolo de Banana Integral", categoria: "Bolos", preco: 20, imagem: BoloDeBananaIntegral },
-    { nome: "Bolo de Cenoura", categoria: "Bolos", preco: 20, imagem: BoloDeCenoura },
+    { nome: "Bolo de Cenoura sem cobertura com gotas de chocolate", categoria: "Bolos", preco: 18, imagem: BoloDeCenoura },
     { nome: "Bolo de Chocolate", categoria: "Bolos", preco: 19, imagem: BoloDeChocolate },
     { nome: "Bolo de Ninho", categoria: "Bolos", preco: 17, imagem: BoloDeNinho },
     { nome: "Broinha de Fubá com Canjica", categoria: "Quitandas", preco: 15, imagem: BroinhaDeCanjica },
@@ -68,8 +69,8 @@ export default function App() {
     { nome: "Pão 100% Integral", categoria: "Pães", preco: 14, imagem: PãoIntegral },
     { nome: "Pão com Canela", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
     { nome: "Pão com Goiabada", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
-    { nome: "Pão com Queijo", categoria: "Pães", preco: 13, imagem: PãoDeCanela },
-  { nome: "Pão Queca", categoria: "Pães", preco: 13, imagem: Queca },
+    { nome: "Pão com Queijo", categoria: "Pães", preco: 14, imagem: PãoComQueijo },
+  { nome: "Pão Queca", categoria: "Pães", preco: 14, imagem: Queca },
     { nome: "Pão de Forma", categoria: "Pães", preco: 9, imagem: PãoDeForma },
     { nome: "Rosquinha de Farinha de Biju", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeBiju },
     { nome: "Rosquinha de Nata", categoria: "Rosquinhas", preco: 13.50, imagem: RosquinhaDeNata },
@@ -86,7 +87,7 @@ export default function App() {
     { nome: "Beliscão de Goiabada", categoria: "Sobremesa", preco: 15, imagem: Beliscão },
     { nome: "Palha Italiana (Cento)", categoria: "Sobremesa", preco: 95, imagem: PalhaItaliana },
     { nome: "Empada de Queijo", categoria: "Quitandas", preco: 19, imagem: Empada },
-    { nome: "Hambúrguer Assado", categoria: "Quitandas", preco: 19, imagem: Hambúrguer }
+    { nome: "Hambúrguer Assado", categoria: "Quitandas", preco: 10, imagem: Hambúrguer }
   ];
 
   const categorias = useMemo(() => {
